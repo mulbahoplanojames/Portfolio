@@ -15,3 +15,10 @@ export type ExpertiseType = {
   id: number;
   name: string;
 };
+
+export type ServicesType = {
+  id: number;
+  title: string;
+  description: string;
+  icon?: string;
+};
