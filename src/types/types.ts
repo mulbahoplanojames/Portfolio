@@ -22,3 +22,13 @@ export type ServicesType = {
   description: string;
   icon?: string;
 };
+
+export type ProjectType = {
+  projectID: number;
+  image: string;
+  projectTitle: string;
+  projectDescription: string;
+  technologiesUsed: string[];
+  liveDemo: string;
+  code: string;
+};
