@@ -5,7 +5,6 @@ import { TbMenu2 } from "react-icons/tb";
 import { MdOutlineCancelPresentation } from "react-icons/md";
 import { FaArrowCircleUp } from "react-icons/fa";
 import { Link, Events, animateScroll as scroll, scrollSpy } from "react-scroll";
-
 import Image from "next/image";
 import { Navlinks } from "@/data/navdata";
 
