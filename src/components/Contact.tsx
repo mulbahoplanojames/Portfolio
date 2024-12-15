@@ -13,6 +13,8 @@ import {
 } from "./ui/form";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
+import axios from "axios";
+import { toast, Toaster } from "react-hot-toast";
 
 type fromType = z.infer<typeof formSchema>;
 
@@ -26,8 +28,48 @@ const Contact = () => {
     },
   });
 
-  const onSubit: SubmitHandler<fromType> = (data) => {
-    console.log(data);
+  const onSubit: SubmitHandler<fromType> = async (formdata) => {
+    const service_id = process.env.NEXT_PUBLIC_SERVICE_ID;
+    const template_id = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+    const public_key = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+
+    const data = {
+      service_id,
+      template_id,
+      user_id: public_key,
+      template_params: {
+        from_name: formdata.name,
+        from_email: formdata.email,
+        to_name: "Oplano James Mulbah",
+        message: formdata.message,
+      },
+    };
+
+    console.log("Service ID:", service_id);
+    console.log("Template ID:", template_id);
+    console.log("User ID:", public_key);
+    console.log("Template Params:", data.template_params);
+
+    try {
+      const res = await axios.post(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      toast.success("Message sent successfully");
+      form.reset();
+      return res.status;
+    } catch (error) {
+      console.log((error as Error).message);
+      console.log("Something went wrong");
+      toast.error("Failed to send message");
+    }
+
+    console.log(formdata);
   };
 
   return (
@@ -102,15 +144,7 @@ const Contact = () => {
                   </FormItem>
                 )}
               />
-
-              {/* form name  */}
-              <input type="hidden" name="from_name" value="Oplano Portfolio" />
-              <input
-                type="hidden"
-                name="subject"
-                value="New Submission from Oplano James Mulbah Portfolio"
-              />
-              <span className="inline-block pb-2"></span>
+              <Toaster position="top-right" reverseOrder={false} />
 
               <button
                 type="submit"
