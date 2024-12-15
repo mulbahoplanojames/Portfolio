@@ -32,3 +32,15 @@ export type ProjectType = {
   liveDemo: string;
   code: string;
 };
+
+export interface PostType {
+  slug: string;
+  content: string;
+  title?: string;
+  date?: string;
+  description?: string;
+  category?: string[];
+  tags?: string[];
+  image?: string;
+  featured?: boolean;
+}

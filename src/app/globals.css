@@ -70,3 +70,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .tw-prose {
+    @apply prose-headings:text-white prose-p:text-white prose-a:text-white  prose-code:bg-[#1f2937] prose-code:text-white prose-pre:bg-[#1f2937] prose-pre:text-white prose-pre:shadow-none prose-pre:ring-0 prose-img:w-[100%] md:prose-img:h-[400px] prose-img:h-[300px] prose-img:rounded-lg prose-blockquote:text-white;
+  }
+}
