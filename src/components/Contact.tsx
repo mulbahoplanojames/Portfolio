@@ -88,7 +88,7 @@ const Contact = () => {
             collaborate and create something extraordinary together.
           </p>
         </div>
-        <div className="bg-text md:w-[80%] w-full rounded-md px-4 py-5 text-primary">
+        <div className="bg-text  w-full rounded-md px-4 py-5 text-primary">
           <h2 className="pb-5 text-2xl font-bold capitalize ">
             Get started today
           </h2>

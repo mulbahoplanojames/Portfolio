@@ -30,7 +30,7 @@ const Portfolio: React.FC = () => {
           Showcasing my recent projects and achievements
         </p>
 
-        <div className="lg:grid-cols-3 md:grid-cols-2 md:gap-8 gap-y-8 grid items-center justify-center grid-cols-1">
+        <div className="lg:grid-cols-3 md:grid-cols-2 md:gap-8 gap-y-8 grid items-center justify-center grid-cols-1 place-items-center">
           {items.slice(0, visible).map((project) => {
             return (
               <ProjectCard

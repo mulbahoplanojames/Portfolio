@@ -12,7 +12,7 @@ const Services: React.FC = () => {
           My Services
         </h1>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-8 gap-y-7">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-8 gap-y-7 place-items-center">
           {/* Mapping over the servicesData array and rendering a div element for each service */}
           {servicesData.map((service) => (
             <div
