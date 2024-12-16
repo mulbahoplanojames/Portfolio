@@ -23,7 +23,7 @@ const projects: ProjectType[] = [
   },
   {
     projectID: 3,
-    image: "/assets/wlifix.png",
+    image: "/assets/wilfix.png",
     projectTitle: "Movie App",
     projectDescription:
       "I Created this Movie App utilizing React, Tailwind CSS, Next.js, and TypeScript, designed to deepen understanding of integrating and handling data from external APIs. This project combines modern front-end frameworks and styling tools to deliver a dynamic user experience, while offering a hands-on approach to working with real-time data.",

@@ -30,11 +30,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <Image src={image! ?? ""} alt="" className="object-scale " fill />
           </div>
           <div className="space-y-3">
-            <a rel="noopener noreferrer" href="#" className="block">
-              <h3 className="text-text group-hover:underline md:text-2xl text-2xl font-semibold">
-                {projectTitle}
-              </h3>
-            </a>
+            <h3 className="text-text group-hover:underline md:text-2xl text-2xl font-semibold">
+              {projectTitle}
+            </h3>
             <p className="text-text text-base leading-snug">
               {projectDescription.slice(0, 150)} .....
             </p>
