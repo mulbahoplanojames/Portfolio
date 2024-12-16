@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Oplano Portfolio",
   description:
     "I am Oplano James, a passionate and versatile individual with a strong foundation in web development. With expertise in both frontend and backend technologies, I bring a comprehensive approach to creating dynamic and user-friendly web experiences. ",
+  icons: {
+    icon: "/assets/logo.png",
+  },
 };
 
 export default function RootLayout({
