@@ -27,7 +27,7 @@ const Blog = () => {
                   <Link
                     href={`/blog/${blog.slug}`}
                     key={blog.slug}
-                    className="grid md:grid-cols-2 grid-cols-1 md:col-span-3 rounded-lg overflow-hidden bg-red-700 order-first group w-full"
+                    className="grid md:grid-cols-2 grid-cols-1 md:col-span-3 rounded-lg overflow-hidden  order-first group w-full"
                   >
                     {/* Featured Blog */}
                     <div className="w-full relative h-44 md:h-72 overflow-hidden">
@@ -53,7 +53,7 @@ const Blog = () => {
                 <Link
                   href={`/blog/${blog.slug}`}
                   key={blog.slug}
-                  className="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition group relative w-full"
+                  className="bg-gray-300 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition group relative w-full"
                 >
                   <div className="w-full h-48 relative">
                     <Image
