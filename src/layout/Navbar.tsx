@@ -1,37 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { TbMenu2 } from "react-icons/tb";
 import { MdOutlineCancelPresentation } from "react-icons/md";
 import { FaArrowCircleUp } from "react-icons/fa";
-import { Link, Events, animateScroll as scroll, scrollSpy } from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll";
 import Image from "next/image";
 import { Navlinks } from "@/data/navdata";
-
-// import RESUME from "/src/PDF/Oplano_James_Mulbah_Resume.pdf";
 
 const Navbar = () => {
   // State variable to keep track of whether the menu is open or not.
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleBegin = (to: string, element: HTMLElement) => {
-      console.log("begin", to, element);
-    };
-    Events.scrollEvent.register("begin", handleBegin);
-
-    const handleEnd = (to: string, element: HTMLElement) => {
-      console.log("end", to, element);
-    };
-    Events.scrollEvent.register("end", handleEnd);
-
-    scrollSpy.update();
-
-    return () => {
-      Events.scrollEvent.remove("begin");
-      Events.scrollEvent.remove("end");
-    };
-  }, []);
 
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -40,6 +19,22 @@ const Navbar = () => {
   // Function to handle the activation of a link.
   const handleSetActive = (to: string) => {
     console.log(to);
+  };
+
+  const handleDownload = () => {
+    const pdfUrl = "/OplanoResume.pdf";
+
+    // Create a temporary link
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.setAttribute("download", "OplanoResume.pdf");
+    link.setAttribute("target", "_blank");
+    link.style.display = "none";
+
+    // Add to document
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -73,9 +68,14 @@ const Navbar = () => {
         {/*//! Contact Us button */}
         <div className="lg:gap-x-6 gap-x-4 flex items-center justify-center">
           <a
-            href={"RESUME"}
-            className="py-2 lg:px-4 px-3 border-none  shadow-[10px 10px 10px -1px rgba(10,99,169,0.16), -10px,-10px,10px -1px rgba(255,255,255,0.70)] text-sm lg:text-base rounded-3xl hover:opacity-50 bg-primary1 text-white"
-            download="Oplano James Mulbah Resume"
+            href="/OplanoResume.pdf"
+            download="OplanoResume.pdf"
+            className="py-2 lg:px-4 px-3 border-none shadow-[10px 10px 10px -1px rgba(10,99,169,0.16), -10px,-10px,10px -1px rgba(255,255,255,0.70)] text-sm lg:text-base rounded-3xl hover:opacity-50 bg-primary1 text-white"
+            onClick={(e) => {
+              // Prevent default if you want to handle it programmatically
+              e.preventDefault();
+              handleDownload();
+            }}
           >
             Download Resume
           </a>
@@ -130,9 +130,14 @@ const Navbar = () => {
                 </li>
               ))}
               <a
-                href={"RESUME"}
-                className="py-2 lg:px-4 px-3 border-none  shadow-[10px 10px 10px -1px rgba(10,99,169,0.16), -10px,-10px,10px -1px rgba(255,255,255,0.70)] text-sm lg:text-base rounded-3xl hover:opacity-50 bg-white text-primary1"
-                download="Oplano James Mulbah Resume"
+                href="/OplanoResume.pdf"
+                download="OplanoResume.pdf"
+                className="py-2 lg:px-4 px-3 border-none shadow-[10px 10px 10px -1px rgba(10,99,169,0.16), -10px,-10px,10px -1px rgba(255,255,255,0.70)] text-sm lg:text-base rounded-3xl hover:opacity-50 bg-white text-primary1"
+                onClick={(e) => {
+                  // Prevent default if you want to handle it programmatically
+                  e.preventDefault();
+                  handleDownload();
+                }}
               >
                 Download Resume
               </a>
