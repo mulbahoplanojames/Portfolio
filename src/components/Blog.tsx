@@ -53,7 +53,7 @@ const Blog = () => {
                 <Link
                   href={`/blog/${blog.slug}`}
                   key={blog.slug}
-                  className="bg-gray-300 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition group relative w-full"
+                  className=" rounded-lg overflow-hidden shadow-xl hover:shadow-lg transition group relative w-full"
                 >
                   <div className="w-full h-48 relative">
                     <Image
