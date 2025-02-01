@@ -71,7 +71,7 @@ Start the server
 
 Here are some related projects
 
-[Awesome README](https://github.com/mulbahoplanojames/Dev-Tech-Ebook---Blog)
+[Awesome README](https://github.com/mulbahoplanojames/movie_app)
 
 
 ## Support
